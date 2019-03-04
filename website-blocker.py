@@ -1,7 +1,9 @@
+#the program is required to run in administration mood to have access to hosts file
+# save as .pyw to make it run on a background
 import time
 print('start')
 from datetime import datetime as dt
-#hosts_temp = "hosts" #temp copy  of hosts file for practice
+#hosts_temp = "hosts" #temp copy of hosts file for practice
 hosts_path = 'C:\Windows\System32\Drivers\etc\hosts' #access to hosts file
 redirect = '127.0.0.1' #where browser will be redirected
 website_list = ['www.facebook.com', 'facebook.com', 'www.1tv.ru', '1tv.ru']#websites to block
@@ -18,7 +20,7 @@ while True:
                 else:
                     file.write(redirect+' '+website+"\n")
         print('W hours')
-
+    #this part of code executes during non-working hours
     else:
         with open(hosts_path, 'r+') as file:
             content = file.readlines() #produces a list of lines 
